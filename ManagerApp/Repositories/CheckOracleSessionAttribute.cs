@@ -9,24 +9,23 @@ public class CheckOracleSessionAttribute : ActionFilterAttribute
     {
         var session = HttpContext.Current.Session;
 
-        if (session["user"] == null || session["password"] == null)
+        if (session["user"] == null)
+        {
+            filterContext.Result = new RedirectResult("/Home/Login");
             return;
+        }
 
         string username = session["user"].ToString();
-        string password = session["password"].ToString();
-
         var userService = new UserService("OracleDbContext");
-        bool alive = userService.CheckOracleSession(username, password);
+        bool alive = userService.CheckOracleSession(username);
 
         if (!alive)
         {
             session.Clear();
             session.Abandon();
             filterContext.Result = new RedirectResult("/Home/Login");
+            return;
         }
+        base.OnActionExecuting(filterContext);
     }
-
 }
-
-
-

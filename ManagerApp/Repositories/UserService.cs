@@ -15,38 +15,33 @@ namespace ManagerApp.Repositories
     {
         private readonly string _baseConnectionString;
         private string _connectionStringUser;
-
+        private readonly string _EntityConnectionString = ConfigurationManager.ConnectionStrings["QL_PHONGGYM"].ConnectionString;
         public UserService(string connectionStringName)
         {
-            _baseConnectionString = ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString;
+            _baseConnectionString = ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString;            
         }
 
-        public string ConnectionStringUser => _connectionStringUser;
+        public string ConnectionStringUser => _EntityConnectionString;
 
-        public bool CheckOracleSession(string username, string hashedPassword)
+        public bool CheckOracleSession(string username)
         {
             try
             {
-                var builder = new OracleConnectionStringBuilder(_baseConnectionString)
-                {
-                    UserID = username.ToUpper(),
-                    Password = hashedPassword,
-                };
-
-                using (var conn = new OracleConnection(builder.ConnectionString))
+                using (var conn = new OracleConnection(_baseConnectionString))
                 using (var cmd = new OracleCommand("SP_CHECK_SESSION", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+
                     cmd.Parameters.Add("p_username", OracleDbType.Varchar2).Value = username.ToUpper();
                     cmd.Parameters.Add("p_result", OracleDbType.Int32).Direction = ParameterDirection.Output;
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
 
-                    int result = Convert.ToInt32(cmd.Parameters["p_result"].Value.ToString());
+                    var oracleResult = cmd.Parameters["p_result"].Value as OracleDecimal?;
+                    int result = oracleResult.HasValue ? oracleResult.Value.ToInt32() : 0;
                     return result == 1;
                 }
-
             }
             catch (Exception ex)
             {
@@ -76,7 +71,6 @@ namespace ManagerApp.Repositories
             }
         }
 
-
         public bool Login(string username, string password)
         {
             password = MaHoa.MaHoaNhan(password, 7);
@@ -88,21 +82,46 @@ namespace ManagerApp.Repositories
                     UserID = username.ToUpper(),
                     Password = password
                 };
-
                 _connectionStringUser = builder.ConnectionString;
 
-                using (var conn = new OracleConnection(_connectionStringUser))
+                using (var connUser = new OracleConnection(_connectionStringUser))
                 {
-                    conn.Open();
+                    connUser.Open(); 
+                }
+
+                try
+                {
+                    using (var connAdmin = new OracleConnection(_EntityConnectionString))
+                    using (var cmd = new OracleCommand("SP_MANAGE_SESSIONS", connAdmin))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("p_username", OracleDbType.Varchar2).Value = username.ToUpper();
+                        cmd.Parameters.Add("p_max_sessions", OracleDbType.Int32).Value = 1;
+
+                        connAdmin.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception mgmtEx)
+                {
+                    System.Diagnostics.Debug.WriteLine("Lỗi quản lý session khi login: " + mgmtEx.Message);
                 }
 
                 return true; 
             }
-            catch
+            catch (OracleException ex)
+            {
+                if (ex.Number == 1017)
+                {
+                    return false;
+                }
+                return false;
+            }
+            catch (Exception)
             {
                 return false;
             }
-        }
+        }       
 
     }
 

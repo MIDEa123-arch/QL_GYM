@@ -163,51 +163,39 @@
                 </a>
             </li>
 
-            <div class="menu-section">Quản lý dữ liệu</div>
+            <div class="menu-section">Quản lý sản phẩm</div>
 
             <li class="menu-item">
-                <a href="@Url.Action("Tables", "Database")" class="menu-link">
+                <a href="@Url.Action("SanPham", "Home")" class="menu-link">
                     <i class="fas fa-table"></i>
-                    <span>Bảng dữ liệu</span>
+                    <span>Danh sách sản phẩm</span>
                 </a>
             </li>
             <li class="menu-item">
                 <a href="@Url.Action("Databases", "Database")" class="menu-link">
                     <i class="fas fa-database"></i>
-                    <span>Cơ sở dữ liệu</span>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="@Url.Action("ImportExport", "Database")" class="menu-link">
-                    <i class="fas fa-file-export"></i>
-                    <span>Import/Export</span>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="@Url.Action("Query", "Database")" class="menu-link">
-                    <i class="fas fa-code"></i>
-                    <span>Truy vấn SQL</span>
+                    <span>Danh sách gói tập</span>
                 </a>
             </li>
 
-            <div class="menu-section">Hệ thống</div>
+            <div class="menu-section">Quản lý khách hàng</div>
 
             <li class="menu-item">
                 <a href="@Url.Action("NguoiDung", "Home")" class="menu-link">
                     <i class="fas fa-users"></i>
-                    <span>Người dùng</span>
+                    <span>Danh sách hóa đơn</span>
                 </a>
             </li>
             <li class="menu-item">
                 <a href="@Url.Action("Roles", "Admin")" class="menu-link">
                     <i class="fas fa-shield-alt"></i>
-                    <span>Phân quyền</span>
+                    <span>Doanh thu</span>
                 </a>
             </li>
             <li class="menu-item">
                 <a href="@Url.Action("History", "Admin")" class="menu-link">
                     <i class="fas fa-history"></i>
-                    <span>Lịch sử</span>
+                    <span>Danh sách khách hàng</span>
                 </a>
             </li>
             <li class="menu-item">
@@ -266,7 +254,7 @@
                             </div>
                         </button>
                         <form action="@Url.Action("Logout", "Home")" method="post">
-                            @Html.AntiForgeryToken()                          
+                            @Html.AntiForgeryToken()
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Hồ sơ</a></li>
                                 <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Cài đặt</a></li>
@@ -305,7 +293,7 @@
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
 
-    <script>
+    <script type="text/javascript">
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('show');
         }
@@ -328,6 +316,35 @@
 
             if (!isClickInside && window.innerWidth <= 768 && sidebar.classList.contains('show')) {
                 sidebar.classList.remove('show');
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            @if (Session["user"] != null)
+            {
+                <text>
+                var sessionCheckInterval = setInterval(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("CheckSessionAlive", "Home")",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) {
+                            if (response.alive === false) {
+                                clearInterval(sessionCheckInterval);
+                                alert("Phiên đăng nhập của bạn đã hết hạn hoặc bị đăng xuất từ một thiết bị khác.");
+                                window.location.href = "@Url.Action("Login", "Home")";
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            console.error("Lỗi khi kiểm tra session: " + error);
+                            clearInterval(sessionCheckInterval);
+                            window.location.href = "@Url.Action("Login", "Home")";
+                        }
+                    });
+                }, 1000); // Lặp lại mỗi 10 giây
+                </text>
             }
         });
     </script>

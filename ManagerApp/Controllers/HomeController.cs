@@ -6,16 +6,46 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ManagerApp.Helpers;
+
 namespace ManagerApp.Controllers
-{
-    [CheckOracleSession]
+{    
     public class HomeController : Controller
     {
         public UserService userService;
-
+        public SanPhamRepository connStr;
         public HomeController()
-        {
+        {   
             userService = new UserService("OracleDbContext");
+        }
+
+        public ActionResult SanPham()
+        {
+            connStr = new SanPhamRepository(Session["connectionString"] as string);
+            var list = connStr.GetAll();
+            return View(list);
+        }
+
+        [HttpPost]
+        public JsonResult CheckSessionAlive()
+        {
+            var session = Session;
+
+            if (session["user"] == null)
+            {
+                return Json(new { alive = false });
+            }
+
+            string username = session["user"].ToString();
+
+            bool alive = userService.CheckOracleSession(username); 
+
+            if (!alive)
+            {
+                session.Clear();
+                session.Abandon();
+            }
+
+            return Json(new { alive = alive });
         }
 
         [HttpPost]
@@ -67,7 +97,7 @@ namespace ManagerApp.Controllers
         }
 
 
-
+        [CheckOracleSession]
         public ActionResult Index()
         {
             return View();

@@ -21,6 +21,8 @@ namespace ManagerApp.Repositories
             _baseConnectionString = ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString;
         }
 
+        public string ConnectionStringUser => _connectionStringUser;
+
         public bool CheckOracleSession(string username, string hashedPassword)
         {
             try
@@ -35,15 +37,16 @@ namespace ManagerApp.Repositories
                 using (var cmd = new OracleCommand("SP_CHECK_SESSION", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("p_username", OracleDbType.Varchar2).Value = username.ToUpper();
                     cmd.Parameters.Add("p_result", OracleDbType.Int32).Direction = ParameterDirection.Output;
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
 
-                    var oracleResult = cmd.Parameters["p_result"].Value as OracleDecimal?;
-                    int result = oracleResult.HasValue ? oracleResult.Value.ToInt32() : 0;
+                    int result = Convert.ToInt32(cmd.Parameters["p_result"].Value.ToString());
                     return result == 1;
                 }
+
             }
             catch (Exception ex)
             {

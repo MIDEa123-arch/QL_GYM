@@ -21,7 +21,12 @@ namespace ManagerApp.Models
             : base("name=QL_PHONGGYM")
         {
         }
-    
+
+        public QL_PHONGGYM(string connectionString)
+            : base(connectionString)
+        {
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

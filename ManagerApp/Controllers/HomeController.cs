@@ -55,6 +55,7 @@ namespace ManagerApp.Controllers
                 string hashedPassword = MaHoa.MaHoaNhan(MaHoa.MaHoaNhan(password, 7), 7);
                 Session["password"] = hashedPassword;
                 Session["loginDate"] = DateTime.Now.ToString("dd/MM/yyyy");
+                Session["connectionString"] = userService.ConnectionStringUser;
 
                 return RedirectToAction("Index");
             }

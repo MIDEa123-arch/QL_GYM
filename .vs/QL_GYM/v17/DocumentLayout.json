@@ -3,20 +3,52 @@
   "WorkspaceRootPath": "D:\\BMCSDL\\QL_GYM\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|D:\\BMCSDL\\QL_GYM\\managerapp\\repositories\\checkoraclesessionattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|solutionrelative:managerapp\\repositories\\checkoraclesessionattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|d:\\bmcsdl\\ql_gym\\managerapp\\repositories\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|solutionrelative:managerapp\\repositories\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|d:\\bmcsdl\\ql_gym\\managerapp\\repositories\\checkoraclesessionattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|solutionrelative:managerapp\\repositories\\checkoraclesessionattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|D:\\BMCSDL\\QL_GYM\\managerapp\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|solutionrelative:managerapp\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|d:\\bmcsdl\\ql_gym\\managerapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DDD69C79-BB07-414E-853A-E25D53DB99AA}|AdminApp\\AdminApp.csproj|d:\\bmcsdl\\ql_gym\\adminapp\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{DDD69C79-BB07-414E-853A-E25D53DB99AA}|AdminApp\\AdminApp.csproj|solutionrelative:adminapp\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65E5B3AE-2CF2-4274-97F6-A102F1AFE19E}|UserApp\\UserApp.csproj|d:\\bmcsdl\\ql_gym\\userapp\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{65E5B3AE-2CF2-4274-97F6-A102F1AFE19E}|UserApp\\UserApp.csproj|solutionrelative:userapp\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|d:\\bmcsdl\\ql_gym\\managerapp\\repositories\\sanphamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|solutionrelative:managerapp\\repositories\\sanphamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|d:\\bmcsdl\\ql_gym\\managerapp\\controllers\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|solutionrelative:managerapp\\controllers\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65E5B3AE-2CF2-4274-97F6-A102F1AFE19E}|UserApp\\UserApp.csproj|d:\\bmcsdl\\ql_gym\\userapp\\repositories\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65E5B3AE-2CF2-4274-97F6-A102F1AFE19E}|UserApp\\UserApp.csproj|solutionrelative:userapp\\repositories\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|D:\\BMCSDL\\QL_GYM\\managerapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|solutionrelative:managerapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|d:\\bmcsdl\\ql_gym\\managerapp\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|solutionrelative:managerapp\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|d:\\bmcsdl\\ql_gym\\managerapp\\models\\ql_gym.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|solutionrelative:managerapp\\models\\ql_gym.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|d:\\bmcsdl\\ql_gym\\managerapp\\models\\ql_gym.context.tt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|solutionrelative:managerapp\\models\\ql_gym.context.tt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|d:\\bmcsdl\\ql_gym\\managerapp\\viewmodel\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F13CB3F7-7C81-4251-BBE3-60C75D0C291D}|ManagerApp\\ManagerApp.csproj|solutionrelative:managerapp\\viewmodel\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +58,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
+              "Title": "SanPhamController.cs",
+              "DocumentMoniker": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\Controllers\\SanPhamController.cs",
+              "RelativeDocumentMoniker": "ManagerApp\\Controllers\\SanPhamController.cs",
+              "ToolTip": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\Controllers\\SanPhamController.cs",
+              "RelativeToolTip": "ManagerApp\\Controllers\\SanPhamController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T15:42:12.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "QL_GYM.Context.cs",
+              "DocumentMoniker": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\Models\\QL_GYM.Context.cs",
+              "RelativeDocumentMoniker": "ManagerApp\\Models\\QL_GYM.Context.cs",
+              "ToolTip": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\Models\\QL_GYM.Context.cs",
+              "RelativeToolTip": "ManagerApp\\Models\\QL_GYM.Context.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T15:31:14.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "QL_GYM.Context.tt",
+              "DocumentMoniker": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\Models\\QL_GYM.Context.tt",
+              "RelativeDocumentMoniker": "ManagerApp\\Models\\QL_GYM.Context.tt",
+              "ToolTip": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\Models\\QL_GYM.Context.tt",
+              "RelativeToolTip": "ManagerApp\\Models\\QL_GYM.Context.tt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-11-15T15:29:45.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Web.config",
               "DocumentMoniker": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\Web.config",
               "RelativeDocumentMoniker": "ManagerApp\\Web.config",
               "ToolTip": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\Web.config",
               "RelativeToolTip": "ManagerApp\\Web.config",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGAAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
               "WhenOpened": "2025-11-15T14:40:51.606Z",
               "EditorCaption": ""
@@ -44,40 +115,105 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CheckOracleSessionAttribute.cs",
-              "DocumentMoniker": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\Repositories\\CheckOracleSessionAttribute.cs",
-              "RelativeDocumentMoniker": "ManagerApp\\Repositories\\CheckOracleSessionAttribute.cs",
-              "ToolTip": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\Repositories\\CheckOracleSessionAttribute.cs",
-              "RelativeToolTip": "ManagerApp\\Repositories\\CheckOracleSessionAttribute.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAowBIAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T14:38:58.79Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "UserService.cs",
               "DocumentMoniker": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\Repositories\\UserService.cs",
               "RelativeDocumentMoniker": "ManagerApp\\Repositories\\UserService.cs",
               "ToolTip": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\Repositories\\UserService.cs",
               "RelativeToolTip": "ManagerApp\\Repositories\\UserService.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAAC0AAAARAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-15T14:29:23.149Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "CheckOracleSessionAttribute.cs",
+              "DocumentMoniker": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\Repositories\\CheckOracleSessionAttribute.cs",
+              "RelativeDocumentMoniker": "ManagerApp\\Repositories\\CheckOracleSessionAttribute.cs",
+              "ToolTip": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\Repositories\\CheckOracleSessionAttribute.cs",
+              "RelativeToolTip": "ManagerApp\\Repositories\\CheckOracleSessionAttribute.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAowBYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T14:38:58.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SanPhamRepository.cs",
+              "DocumentMoniker": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\Repositories\\SanPhamRepository.cs",
+              "RelativeDocumentMoniker": "ManagerApp\\Repositories\\SanPhamRepository.cs",
+              "ToolTip": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\Repositories\\SanPhamRepository.cs",
+              "RelativeToolTip": "ManagerApp\\Repositories\\SanPhamRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T15:46:57.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\BMCSDL\\QL_GYM\\UserApp\\Web.config",
+              "RelativeDocumentMoniker": "UserApp\\Web.config",
+              "ToolTip": "D:\\BMCSDL\\QL_GYM\\UserApp\\Web.config",
+              "RelativeToolTip": "UserApp\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-11-15T15:52:51.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\BMCSDL\\QL_GYM\\AdminApp\\Web.config",
+              "RelativeDocumentMoniker": "AdminApp\\Web.config",
+              "ToolTip": "D:\\BMCSDL\\QL_GYM\\AdminApp\\Web.config",
+              "RelativeToolTip": "AdminApp\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-11-15T15:53:33.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AccountRepository.cs",
+              "DocumentMoniker": "D:\\BMCSDL\\QL_GYM\\UserApp\\Repositories\\AccountRepository.cs",
+              "RelativeDocumentMoniker": "UserApp\\Repositories\\AccountRepository.cs",
+              "ToolTip": "D:\\BMCSDL\\QL_GYM\\UserApp\\Repositories\\AccountRepository.cs",
+              "RelativeToolTip": "UserApp\\Repositories\\AccountRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T15:47:42.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "ManagerApp\\Controllers\\HomeController.cs",
               "ToolTip": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\Controllers\\HomeController.cs",
               "RelativeToolTip": "ManagerApp\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAgwDwAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwDcAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-15T14:29:10.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserViewModel.cs",
+              "DocumentMoniker": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\ViewModel\\UserViewModel.cs",
+              "RelativeDocumentMoniker": "ManagerApp\\ViewModel\\UserViewModel.cs",
+              "ToolTip": "D:\\BMCSDL\\QL_GYM\\ManagerApp\\ViewModel\\UserViewModel.cs",
+              "RelativeToolTip": "ManagerApp\\ViewModel\\UserViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T15:24:48.923Z",
               "EditorCaption": ""
             }
           ]

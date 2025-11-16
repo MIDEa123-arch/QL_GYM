@@ -18,7 +18,7 @@ namespace ManagerApp.Repositories
         private readonly string _EntityConnectionString = ConfigurationManager.ConnectionStrings["QL_PHONGGYM"].ConnectionString;
         public UserService(string connectionStringName)
         {
-            _baseConnectionString = ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString;            
+            _baseConnectionString = ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString;
         }
 
         public string ConnectionStringUser => _EntityConnectionString;
@@ -38,7 +38,7 @@ namespace ManagerApp.Repositories
                     cmd.ExecuteNonQuery();
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -75,7 +75,7 @@ namespace ManagerApp.Repositories
         {
             try
             {
-                using (var conn = new OracleConnection(_baseConnectionString)) 
+                using (var conn = new OracleConnection(_baseConnectionString))
                 using (var cmd = new OracleCommand("SP_LOGOUT_USER", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -83,10 +83,10 @@ namespace ManagerApp.Repositories
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
-                    return true; 
+                    return true;
                 }
             }
-            catch 
+            catch
             {
                 return false;
             }
@@ -107,16 +107,16 @@ namespace ManagerApp.Repositories
 
                 using (var connUser = new OracleConnection(_connectionStringUser))
                 {
-                    connUser.Open(); 
-                }             
+                    connUser.Open();
+                }
 
-                return true; 
+                return true;
             }
-            catch (Exception ex)
+            catch (OracleException ex)
             {
-                throw ex;                
+                throw ex;
             }
-        }       
+        }
 
     }
 

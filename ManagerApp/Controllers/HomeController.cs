@@ -1,20 +1,21 @@
-﻿using ManagerApp.Repositories;
+﻿using ManagerApp.Helpers;
+using ManagerApp.Repositories;
 using ManagerApp.ViewModel;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ManagerApp.Helpers;
 
 namespace ManagerApp.Controllers
-{    
+{
     public class HomeController : Controller
     {
         public UserService userService;
         public SanPhamRepository connStr;
         public HomeController()
-        {   
+        {
             userService = new UserService("OracleDbContext");
         }
 
@@ -37,7 +38,7 @@ namespace ManagerApp.Controllers
 
             string loginID = session["LoginID"].ToString();
 
-            bool alive = userService.CheckOracleSession(loginID); 
+            bool alive = userService.CheckOracleSession(loginID);
 
             if (!alive)
             {
@@ -76,9 +77,29 @@ namespace ManagerApp.Controllers
         {
             string username = form["TenDangNhap"];
             string password = form["MatKhau"];
+            bool result = false;
 
-            bool result = userService.Login(username, password);
-
+            try
+            {
+                result = userService.Login(username, password);
+            }
+            catch(OracleException ex)
+            {
+                if (ex.Number == 28000)
+                {
+                    TempData["Error"] = "Tài khoản của bạn đã bị khóa!";
+                }
+                else if (ex.Number == 1017)
+                {
+                    TempData["Error"] = "Sai tài khoản hoặc mật khẩu!";
+                }
+                else
+                {
+                    TempData["Error"] = "Lỗi Oracle: " + ex.Message;
+                }
+                result = false;
+            }
+            
             if (result)
             {
                 string loginID = Guid.NewGuid().ToString();
@@ -95,7 +116,6 @@ namespace ManagerApp.Controllers
             }
             else
             {
-                TempData["Error"] = "Sai tài khoản hoặc mật khẩu!";
                 return RedirectToAction("Login");
             }
         }

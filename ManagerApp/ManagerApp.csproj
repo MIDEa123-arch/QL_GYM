@@ -254,7 +254,6 @@
       <DependentUpon>QL_GYM.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\CheckOracleSessionAttribute.cs" />
     <Compile Include="Repositories\SanPhamRepository.cs" />
     <Compile Include="Repositories\UserService.cs" />
     <Compile Include="ViewModel\AccountModel.cs" />

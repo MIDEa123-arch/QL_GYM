@@ -23,7 +23,28 @@ namespace ManagerApp.Repositories
 
         public string ConnectionStringUser => _EntityConnectionString;
 
-        public bool CheckOracleSession(string username)
+        public void RegisterLogin(string username, string loginID, int maxSessions)
+        {
+            try
+            {
+                using (var conn = new OracleConnection(_baseConnectionString))
+                using (var cmd = new OracleCommand("SP_REGISTER_LOGIN", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("p_username", OracleDbType.Varchar2).Value = username.ToUpper();
+                    cmd.Parameters.Add("p_login_id", OracleDbType.Varchar2).Value = loginID;
+                    cmd.Parameters.Add("p_max_sessions", OracleDbType.Int32).Value = maxSessions;
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex) 
+            {
+                throw ex;
+            }
+        }
+
+        public bool CheckOracleSession(string loginID)
         {
             try
             {
@@ -32,7 +53,7 @@ namespace ManagerApp.Repositories
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("p_username", OracleDbType.Varchar2).Value = username.ToUpper();
+                    cmd.Parameters.Add("p_login_id", OracleDbType.Varchar2).Value = loginID;
                     cmd.Parameters.Add("p_result", OracleDbType.Int32).Direction = ParameterDirection.Output;
 
                     conn.Open();
@@ -87,39 +108,13 @@ namespace ManagerApp.Repositories
                 using (var connUser = new OracleConnection(_connectionStringUser))
                 {
                     connUser.Open(); 
-                }
-
-                try
-                {
-                    using (var connAdmin = new OracleConnection(_EntityConnectionString))
-                    using (var cmd = new OracleCommand("SP_MANAGE_SESSIONS", connAdmin))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add("p_username", OracleDbType.Varchar2).Value = username.ToUpper();
-                        cmd.Parameters.Add("p_max_sessions", OracleDbType.Int32).Value = 1;
-
-                        connAdmin.Open();
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                catch (Exception mgmtEx)
-                {
-                    System.Diagnostics.Debug.WriteLine("Lỗi quản lý session khi login: " + mgmtEx.Message);
-                }
+                }             
 
                 return true; 
             }
-            catch (OracleException ex)
+            catch (Exception ex)
             {
-                if (ex.Number == 1017)
-                {
-                    return false;
-                }
-                return false;
-            }
-            catch (Exception)
-            {
-                return false;
+                throw ex;                
             }
         }       
 

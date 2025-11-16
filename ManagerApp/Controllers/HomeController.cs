@@ -30,14 +30,14 @@ namespace ManagerApp.Controllers
         {
             var session = Session;
 
-            if (session["user"] == null)
+            if (session["LoginID"] == null)
             {
                 return Json(new { alive = false });
             }
 
-            string username = session["user"].ToString();
+            string loginID = session["LoginID"].ToString();
 
-            bool alive = userService.CheckOracleSession(username); 
+            bool alive = userService.CheckOracleSession(loginID); 
 
             if (!alive)
             {
@@ -81,6 +81,10 @@ namespace ManagerApp.Controllers
 
             if (result)
             {
+                string loginID = Guid.NewGuid().ToString();
+                userService.RegisterLogin(username, loginID, 2);
+
+                Session["LoginID"] = loginID;
                 Session["user"] = username;
                 string hashedPassword = MaHoa.MaHoaNhan(MaHoa.MaHoaNhan(password, 7), 7);
                 Session["password"] = hashedPassword;
@@ -96,8 +100,6 @@ namespace ManagerApp.Controllers
             }
         }
 
-
-        [CheckOracleSession]
         public ActionResult Index()
         {
             return View();
